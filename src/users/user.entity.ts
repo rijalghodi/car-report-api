@@ -1,4 +1,5 @@
 import { Exclude } from 'class-transformer';
+import { Report } from '../reports/report.entity';
 import {
   Entity,
   Column,
@@ -6,6 +7,7 @@ import {
   AfterInsert,
   AfterUpdate,
   AfterRemove,
+  OneToMany,
 } from 'typeorm';
 
 @Entity()
@@ -19,6 +21,17 @@ export class User {
   @Column()
   @Exclude()
   password: string;
+
+  @OneToMany(() => Report, (report) => report.user)
+  /**
+   * The first argument in OneToMany decorator diperlukan, karena antara
+   * Report dan User memiliki circular dependency. Supaya tidak konflik,
+   * jalan keluarnya adalah callback function
+   *
+   * Adapun argumen kedua digunakan untuk mendefinsikan hubungan antara
+   * user dengan report
+   */
+  reports: Report[];
 
   // This is called after insert user
   @AfterInsert()

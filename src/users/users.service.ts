@@ -5,6 +5,7 @@ import { User } from './user.entity';
 
 @Injectable()
 export class UsersService {
+  // To use Repository provided by typeorm, use this pattern
   constructor(@InjectRepository(User) private repo: Repository<User>) {}
 
   create(email: string, password: string) {

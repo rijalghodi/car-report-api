@@ -5,6 +5,9 @@ export class ReportDto {
   id: string;
 
   @Expose()
+  approved: boolean;
+
+  @Expose()
   price: number;
 
   @Expose()

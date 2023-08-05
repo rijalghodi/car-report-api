@@ -22,6 +22,12 @@ export class User {
   @Exclude()
   password: string;
 
+  @Column({ default: true })
+  admin: boolean;
+  /**
+   * This property for permission to edit report approval
+   */
+
   @OneToMany(() => Report, (report) => report.user)
   /**
    * The first argument in OneToMany decorator diperlukan, karena antara

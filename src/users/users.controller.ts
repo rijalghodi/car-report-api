@@ -25,6 +25,8 @@ import { AuthGuard } from 'src/guards/auth.guard';
 @Controller('auth')
 @Serialize(UserDto)
 // @UseInterceptors(CurrentUserInterceptor)
+// This is not used anymore because CurrentUserInterceptor has been used globally
+// see /users/users.module
 export class UsersController {
   constructor(
     private usersService: UsersService,

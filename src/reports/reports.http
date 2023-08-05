@@ -1,0 +1,44 @@
+### Signup
+POST http://localhost:1001/auth/signup
+content-type: application/json
+
+{
+    "email": "test@test.com",
+    "password": "123"
+}
+
+### Signin
+POST http://localhost:1001/auth/signin
+content-type: application/json
+
+{
+    "email": "test@test.com",
+    "password": "123"
+}
+
+
+### Create report
+POST http://localhost:1001/reports
+content-type: application/json
+
+{
+  "make": "Tesla",
+  "model": "X",
+  "price": 1000,
+  "mileage": 1000,
+  "year": 2015,
+  "lng": 5,
+  "lat": 8
+}
+
+
+### Approve report
+PATCH http://localhost:1001/reports/9
+content-type: application/json
+
+{
+  "approved": true
+}
+
+### Get estimate
+GET http://localhost:1001/reports?make=Tesla&model=X&mileage=1000&year=2015&lng=0&lat=0

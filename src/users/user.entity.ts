@@ -18,6 +18,12 @@ export class User {
   @Column()
   email: string;
 
+  // @Column({ nullable: true })
+  // name: string;
+
+  // @Column({ nullable: true })
+  // age: number;
+
   @Column()
   @Exclude()
   password: string;

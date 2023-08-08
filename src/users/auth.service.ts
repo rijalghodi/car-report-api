@@ -14,6 +14,7 @@ export class AuthService {
   constructor(private usersService: UsersService) {}
 
   async signup(email: string, password: string) {
+    console.log('masuk mas bro');
     // 1. See if emial in use
     const users = await this.usersService.find(email);
 

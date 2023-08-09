@@ -26,6 +26,6 @@ async function bootstrap() {
   //     whitelist: true, // to make sure that incoming body only contains the expected properiy
   //   }),
   // );
-  await app.listen(1001);
+  await app.listen(process.env.PORT || 1001);
 }
 bootstrap();
